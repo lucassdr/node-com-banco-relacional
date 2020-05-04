@@ -48,11 +48,11 @@ const cadastrarAluno = (request, response) => {
 
 const atualizarAluno = (request, response) => {
     const id = parseInt(request.params.id)
-    const { nome, fk_cursos_id } = request.body
+    const { nome } = request.body
 
     pool.query(
-        'UPDATE alunos SET nome = $1, fk_cursos_id = $2 WHERE id = $3',
-        [nome, fk_cursos_id, id],
+        'UPDATE alunos SET nome = $1 WHERE id = $2',
+        [nome, id],
         (error, results) => {
             if (error) {
                 return console.log('atualizarAluno ==>', error)

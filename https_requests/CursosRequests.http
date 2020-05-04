@@ -1,0 +1,31 @@
+### CURSOS
+
+### 
+
+POST http://localhost:5000/cursos 
+content-type: application/json
+
+{
+    "nome": "Sistemas de informações"
+}
+
+### 
+
+GET http://localhost:5000/cursos
+
+### 
+
+GET http://localhost:5000/cursos/1
+
+###
+
+PUT http://localhost:5000/cursos/1
+content-type: application/json
+
+{
+    "nome": "Sistemas de Informação"
+}
+
+###
+
+DELETE http://localhost:5000/cursos/1

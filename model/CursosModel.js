@@ -24,7 +24,7 @@ const cadastrarCurso = (request, response) => {
     const { nome } = request.body
     console.log('==>', request.body)
     pool.query(
-        'INSERT INTO cursos (nome) VALUES ($1, $2)',
+        'INSERT INTO cursos (nome) VALUES ($1)',
         [nome],
         (error, result) => {
             if (error) {
@@ -40,7 +40,7 @@ const atualizarCurso = (request, response) => {
     const { nome } = request.body
 
     pool.query(
-        'UPDATE cursos SET nome = $1 = $2 WHERE id = $3',
+        'UPDATE cursos SET nome = $1 WHERE id = $2',
         [nome, id],
         (error, results) => {
             if (error) {
